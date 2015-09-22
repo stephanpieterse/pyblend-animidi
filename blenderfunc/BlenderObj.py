@@ -247,14 +247,14 @@ class BlenderObj:
                 standard_data = standard_data.replace("%CALCULATED_FRAME%",str(sframe))
                 # standard_data = standard_data.replace("%SEL_OBJECT_NAME%",selObjName)
                 if should_create == True:
-                    duplCommand = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene',selObjName + "_copy",selObjName)
-                    duplCommand += "\n"
-                    duplCommand += "actionObj = {}".format("bpy.data.objects[actionObj]")
-                    duplCommand += "\n"
-                    duplCommand += "actionObj.animation_data_create()"
+                    dupl_command = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene',selObjName + "_copy",selObjName)
+                    dupl_command += "\n"
+                    dupl_command += "actionObj = {}".format("bpy.data.objects[actionObj]")
+                    dupl_command += "\n"
+                    dupl_command += "actionObj.animation_data_create()"
                 else:
-                    duplCommand = "actionObj = {}".format(actionobj)
-                standard_data = standard_data.replace("%DUPLICATE_ME_SECTION%",duplCommand)
+                    dupl_command = "actionObj = {}".format(actionobj)
+                standard_data = standard_data.replace("%DUPLICATE_ME_SECTION%",dupl_command)
                 standard_data = standard_data.replace("%ACTION_OBJ%",actionobj)
                 standard_data = standard_data.replace("%NLA_BLENDS%",cmd_nla_blends)
                 standard_data = standard_data.replace("%NOTE_START_FRAME%", str(sframe))
@@ -309,14 +309,14 @@ class BlenderObj:
                 script = script.replace("%CALCULATED_FRAME%", str(sframe))
                 # script = script.replace("%CURRENT_OBJECT%", self.guyConf["name"])
                 if should_create == True:
-                    duplCommand = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene', selObjName + "_copy", selObjName)
-                    duplCommand += "\n"
-                    duplCommand += "actionObj = {}".format("bpy.data.objects[actionObj]")
-                    duplCommand += "\n"
-                    duplCommand += "actionObj.animation_data_create()"
+                    dupl_command = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene', selObjName + "_copy", selObjName)
+                    dupl_command += "\n"
+                    dupl_command += "actionObj = {}".format("bpy.data.objects[actionObj]")
+                    dupl_command += "\n"
+                    dupl_command += "actionObj.animation_data_create()"
                 else:
-                    duplCommand = "actionObj = {}".format(selObjName)
-                script = script.replace("%DUPLICATE_ME_SECTION%",duplCommand)
+                    dupl_command = "actionObj = {}".format(selObjName)
+                script = script.replace("%DUPLICATE_ME_SECTION%",dupl_command)
                 script = script.replace("%NOTE_START_FRAME%", str(sframe))
                 script = script.replace("%NOTE_END_FRAME%", str(eframe))
 

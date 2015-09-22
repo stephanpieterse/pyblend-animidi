@@ -1,88 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9474336e-6782-4901-9752-01436eb4ae98" name="Default" comment="more cleanup">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/CoreMIDI.framework" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/Csvmidi.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/Midicsv.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/_sequencer_osx.so" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/a.out" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/cfstring-typemaps-example-1.0.tar.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/mary.mid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/test.mid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/test" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_alsa/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/Csvmidi.vcproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/Midicsv.sln" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/Midicsv.vcproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/cfstring-typemaps-example-1.0/PKG-INFO" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/README.mediawiki" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/W32test.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_alsa/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/acomp.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/backup.i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/bad.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/ce3k.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/chorus.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/constants.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/containers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/count_events.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/csv.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/csv.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/csvmidi.1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/csvmidi.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/drummer.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/events.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/cfstring-typemaps-example-1.0/example.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/cfstring-typemaps-example-1.0/example.i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/examples/example_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/examples/example_2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/exchannel.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/fileio.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/general_midi.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/getopt.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/getopt.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/log.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/make.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/tests/mary_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/midicsv.1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/midicsv.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/midicsv.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/scripts/mididump.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/scripts/mididumphw.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/midifile.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/scripts/midilisten.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/midio.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/midio.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/scripts/midiplay.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_alsa/sequencer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_alsa/sequencer_alsa.i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/sequencer_osx.i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/sequencer_osx.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/sequencer_osx_wrap.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/setup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/cfstring-typemaps-example-1.0/setup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/test.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/sequencer_osx/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/tests/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/torture.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/transpose.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/types.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/python-midi-master/src/util.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sources/midicsv-1.1/version.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sources/midicsv-1.1.tar.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sources/python-midi-master.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/kit balls test/kit balls test.blend1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/kit balls test/kit balls test.blend2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/kit balls test/rend/0001-0463.dvd" afterPath="" />
+    <list default="true" id="9474336e-6782-4901-9752-01436eb4ae98" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blenderfunc/BlenderObj.py" afterPath="$PROJECT_DIR$/blenderfunc/BlenderObj.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pyblend-animidi.iws" />
@@ -126,21 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlenderObj.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlenderObj.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+            <state vertical-scroll-proportion="-0.2371134">
+              <caret line="318" column="78" selection-start-line="318" selection-start-column="78" selection-end-line="318" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -190,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="206" column="51" selection-start-line="206" selection-start-column="51" selection-end-line="206" selection-end-column="51" />
+              <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -242,11 +152,11 @@
         <option value="$PROJECT_DIR$/blenderfunc/blender_standardActionScript.py" />
         <option value="$PROJECT_DIR$/blenderfunc/blender_continueActionScript.py" />
         <option value="$PROJECT_DIR$/blenderfunc/__init__.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/pyblend-animidi.py" />
         <option value="$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py" />
-        <option value="$PROJECT_DIR$/blenderfunc/BlenderObj.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/blenderfunc/BlenderObj.py" />
       </list>
     </option>
   </component>
@@ -301,52 +211,7 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyblend-animidi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyblend-animidi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyblend-animidi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyblend-animidi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyblend-animidi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyblend-animidi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyblend-animidi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blenderfunc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
@@ -751,7 +616,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442862290747</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="refactorings yay">
+      <created>1442947314057</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1442947314057</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -765,27 +636,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24869695" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28145942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28145942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52202284" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5026061" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54323" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52202284" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -801,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixed csv or midi mode and tempo mappings." />
     <MESSAGE value="deleted files?&#10;" />
     <MESSAGE value="did some work on the object destruction for copies. added command line option to specify a different config file" />
     <MESSAGE value="started a new test file and render. fixed a weird naming bug in blender script. did the killcode properly. sys args ftw." />
@@ -826,7 +696,8 @@
     <MESSAGE value="did some refactoring. added the duplicate object for continue script. removed wait action from note stuff." />
     <MESSAGE value="added the other test models" />
     <MESSAGE value="some refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="some refactoring" />
+    <MESSAGE value="refactorings yay" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactorings yay" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1163,22 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="206" column="51" selection-start-line="206" selection-start-column="51" selection-end-line="206" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blenderfunc/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyblend-animidi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1186,14 +1041,6 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blenderfunc/blender_dupliKillScript.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1213,18 +1060,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blenderfunc/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blenderfunc/blender_dupliKillScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.2371134">
+          <caret line="318" column="78" selection-start-line="318" selection-start-column="78" selection-end-line="318" selection-end-column="78" />
           <folding />
         </state>
       </provider>
