@@ -31,7 +31,7 @@ class animidi:
         frame_range = [ confOptions['frameStart'],confOptions['frameEnd'] ]
 
         tx = 0
-        foundTempo = False
+        found_tempo = False
         while tx < len(pattern):
             track = pattern[tx]
             i = len(track)
@@ -41,10 +41,10 @@ class animidi:
                 if tname == "Set Tempo":
                     BPM = track[x].bpm
                     self.BPM = BPM
-                    foundTempo = True
+                    found_tempo = True
                 x += 1
             tx += 1
-            if foundTempo == True:
+            if found_tempo is True:
                 break
 
         midiUtil = midiUtility(self.midiResolution,self.BPM,self.FPS)
@@ -64,7 +64,6 @@ class animidi:
             x = 0
             while x < i:
                 tname = track[x].name
-
                 ntick = track[x].tick
                 globalTick = globalTick + ntick
                 whichFrame = midiUtil.tickToFrame(globalTick)
@@ -227,11 +226,11 @@ class animidi:
         aObjs = confFile.getConfig('blenderobjects')
 
         try:
-            shouldCycle = confOptions['parseCycleSequences']
+            should_cycle = confOptions['parseCycleSequences']
         except KeyError:
-            shouldCycle = False
+            should_cycle = False
 
-        if shouldCycle:
+        if should_cycle:
             cycleList = []
             cycleChannels = []
             cycleConfs = confFile.getConfig("cycle_sequences")
@@ -295,13 +294,13 @@ class animidi:
 
         # do the fcurve handle refreshing. no longer used really. the clean messes up our keyframes.
         with open("blenderfunc/blender_endScriptRefresh.py",'r') as f:
-            lastAction = f.read()
+            last_action = f.read()
             f.close()
 
         # set the scene frame back to 1.
         with open(outputScriptName, 'a') as f:
             f.write("bpy.context.scene.frame_set(1)\n")
-            f.write(lastAction)
+            f.write(last_action)
             f.close()
 
         print "you can now import the script {} into blender and run it.".format(outputScriptName)

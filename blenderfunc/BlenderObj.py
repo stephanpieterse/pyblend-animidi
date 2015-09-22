@@ -77,9 +77,9 @@ class BlenderObj:
             eframe = sframe + self.newNoteLength;
 
         if self.consolidatedAction == False:
-            self.updateAction("insert", [channel, pitch, velocity, sframe, eframe])
+            self.update_action("insert", [channel, pitch, velocity, sframe, eframe])
         else:
-            self.continueAction("insert", [channel, pitch, velocity, sframe, eframe])
+            self.continue_action("insert", [channel, pitch, velocity, sframe, eframe])
 
     def millisecondsToFrames(self, milliseconds):
         fps = self.framerate # 25
@@ -207,10 +207,10 @@ class BlenderObj:
     def generateScript(self, pitch, vel, sframe, eframe):
         restAction = self.guyConf["restAction"]
         selObjName = self.guyConf["name"]
-        shouldCreate = self.guyConf["objectOptions"]["shouldCreate"]
+        should_create = self.guyConf["objectOptions"]["shouldCreate"]
         destroyWhenDone = self.guyConf["objectOptions"]["destroyWhenDone"]
 
-        if destroyWhenDone and not shouldCreate:
+        if destroyWhenDone and not should_create:
             print("you will be destroying {} multiple times... script will run but check your config.".format(selObjName))
 
         standard_data = ""
@@ -246,7 +246,7 @@ class BlenderObj:
                 standard_data = standard_data.replace("%REST_ACTION%", restAction)
                 standard_data = standard_data.replace("%CALCULATED_FRAME%",str(sframe))
                 # standard_data = standard_data.replace("%SEL_OBJECT_NAME%",selObjName)
-                if shouldCreate == True:
+                if should_create == True:
                     duplCommand = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene',selObjName + "_copy",selObjName)
                     duplCommand += "\n"
                     duplCommand += "actionObj = {}".format("bpy.data.objects[actionObj]")
@@ -272,7 +272,7 @@ class BlenderObj:
         return standard_data
 
     def continueScript(self, pitch, vel, sframe, eframe):
-        shouldCreate = self.guyConf["objectOptions"]["shouldCreate"]
+        should_create = self.guyConf["objectOptions"]["shouldCreate"]
         destroyWhenDone = self.guyConf["objectOptions"]["destroyWhenDone"]
         pitch_result = self.getPitchAction(pitch)
         pitchAction = pitch_result['pitch']
@@ -308,7 +308,7 @@ class BlenderObj:
                 script = script.replace("%NEW_ACTION%", self.currentNewAction)
                 script = script.replace("%CALCULATED_FRAME%", str(sframe))
                 # script = script.replace("%CURRENT_OBJECT%", self.guyConf["name"])
-                if shouldCreate == True:
+                if should_create == True:
                     duplCommand = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene', selObjName + "_copy", selObjName)
                     duplCommand += "\n"
                     duplCommand += "actionObj = {}".format("bpy.data.objects[actionObj]")
@@ -324,39 +324,25 @@ class BlenderObj:
 
         return script
 
-    def continueAction(self, commandName, command):
+    def continue_action(self, commandName, command):
         if commandName == "insert":
-            chan = command[0]
             pitch = command[1]
             vel = command[2]
             sframe = command[3]
             eframe = command[4]
 
-        if commandName == "offNote":
-            chan = command[0]
-            pitch = command[1]
-            sframe = command[2]
-            eframe = command[3]
+        new_command = self.continueScript(pitch, vel, sframe, eframe)
+        self.outputScript += new_command
 
-        newcommand = self.continueScript(pitch, vel, sframe, eframe)
-        self.outputScript += newcommand
-
-    def updateAction(self, commandName, command):
+    def update_action(self, commandName, command):
         if commandName == "insert":
-            chan = command[0]
             pitch = command[1]
             vel = command[2]
             sframe = command[3]
             eframe = command[4]
 
-        if commandName == "offNote":
-            chan = command[0]
-            pitch = command[1]
-            sframe = command[2]
-            eframe = command[3]
-
-        newcommand = self.generateScript(pitch, vel, sframe, eframe)
-        self.outputScript += newcommand
+        new_command = self.generateScript(pitch, vel, sframe, eframe)
+        self.outputScript += new_command
 
     def write_blender_script(self):
         out_config = self.configfile.getConfig("scriptOutput")
