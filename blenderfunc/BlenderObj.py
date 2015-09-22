@@ -192,32 +192,32 @@ class BlenderObj:
 
         return retVal
 
-    def updateActionDelay(self,atFrame):
+    def update_action_delay(self,at_frame):
         midiUtil = midiUtility(self.midiResolution, self.BPM, self.framerate)
 
         try:
-            objDelay = self.guyConf["objectOptions"]["objectDelay"]
-            atFrame += midiUtil.tickToFrame(objDelay)
+            obj_delay = self.guyConf["objectOptions"]["objectDelay"]
+            at_frame += midiUtil.tickToFrame(obj_delay)
         except KeyError:
-            # objDelay = 0
+            # obj_delay = 0
             pass
 
-        return atFrame
+        return at_frame
 
     def generateScript(self, pitch, vel, sframe, eframe):
         restAction = self.guyConf["restAction"]
         selObjName = self.guyConf["name"]
         should_create = self.guyConf["objectOptions"]["shouldCreate"]
-        destroyWhenDone = self.guyConf["objectOptions"]["destroyWhenDone"]
+        destroy_when_done = self.guyConf["objectOptions"]["destroyWhenDone"]
 
-        if destroyWhenDone and not should_create:
+        if destroy_when_done and not should_create:
             print("you will be destroying {} multiple times... script will run but check your config.".format(selObjName))
 
         standard_data = ""
 
         pitch_result = self.getPitchAction(pitch)
         pitchAction = pitch_result['pitch']
-        noPitchAction = pitch_result['noPitch']
+        no_pitch_action = pitch_result['noPitch']
         preNoteAction = pitch_result['preNote']
         attackAction = pitch_result['attack']
         attackTime = pitch_result['attackTime']
@@ -226,10 +226,10 @@ class BlenderObj:
         vibratoAction = pitch_result['vibrato']
         vibratoTime = pitch_result['vibratoTime']
         waitAction = pitch_result['wait']
-        sframe = self.updateActionDelay(sframe)
-        eframe = self.updateActionDelay(eframe)
+        sframe = self.update_action_delay(sframe)
+        eframe = self.update_action_delay(eframe)
 
-        if noPitchAction == False:
+        if no_pitch_action is False:
             actionobj = self.get_data_set()
             cmd_nla_blends = self.setNLABlends()
 
@@ -246,7 +246,7 @@ class BlenderObj:
                 standard_data = standard_data.replace("%REST_ACTION%", restAction)
                 standard_data = standard_data.replace("%CALCULATED_FRAME%",str(sframe))
                 # standard_data = standard_data.replace("%SEL_OBJECT_NAME%",selObjName)
-                if should_create == True:
+                if should_create is True:
                     dupl_command = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene',selObjName + "_copy",selObjName)
                     dupl_command += "\n"
                     dupl_command += "actionObj = {}".format("bpy.data.objects[actionObj]")
@@ -259,7 +259,7 @@ class BlenderObj:
                 standard_data = standard_data.replace("%NLA_BLENDS%",cmd_nla_blends)
                 standard_data = standard_data.replace("%NOTE_START_FRAME%", str(sframe))
                 standard_data = standard_data.replace("%NOTE_END_FRAME%", str(eframe))
-                if destroyWhenDone == True:
+                if destroy_when_done is True:
                     kf = open("blenderfunc/blender_dupliKillScript.py")
                     killCommand = kf.read()
                     kf.close
@@ -273,7 +273,7 @@ class BlenderObj:
 
     def continueScript(self, pitch, vel, sframe, eframe):
         should_create = self.guyConf["objectOptions"]["shouldCreate"]
-        destroyWhenDone = self.guyConf["objectOptions"]["destroyWhenDone"]
+        destroy_when_done = self.guyConf["objectOptions"]["destroyWhenDone"]
         pitch_result = self.getPitchAction(pitch)
         pitchAction = pitch_result['pitch']
         no_pitch_action = pitch_result['noPitch']
@@ -288,8 +288,8 @@ class BlenderObj:
         restAction = self.guyConf["restAction"]
         selObjName = self.guyConf["name"]
 
-        sframe = self.updateActionDelay(sframe)
-        eframe = self.updateActionDelay(eframe)
+        sframe = self.update_action_delay(sframe)
+        eframe = self.update_action_delay(eframe)
 
         if no_pitch_action is False:
             # actionobj = self.get_data_set()
@@ -308,7 +308,7 @@ class BlenderObj:
                 script = script.replace("%NEW_ACTION%", self.currentNewAction)
                 script = script.replace("%CALCULATED_FRAME%", str(sframe))
                 # script = script.replace("%CURRENT_OBJECT%", self.guyConf["name"])
-                if should_create == True:
+                if should_create is True:
                     dupl_command = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene', selObjName + "_copy", selObjName)
                     dupl_command += "\n"
                     dupl_command += "actionObj = {}".format("bpy.data.objects[actionObj]")

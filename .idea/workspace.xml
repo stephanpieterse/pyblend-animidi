@@ -49,8 +49,8 @@
       <file leaf-file-name="BlenderObj.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.2371134">
-              <caret line="318" column="78" selection-start-line="318" selection-start-column="78" selection-end-line="318" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.44329897">
+              <caret line="91" column="47" selection-start-line="91" selection-start-column="47" selection-end-line="91" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -622,7 +622,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442947314057</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="refactoring">
+      <created>1442947723177</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1442947723177</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -672,7 +678,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="deleted files?&#10;" />
     <MESSAGE value="did some work on the object destruction for copies. added command line option to specify a different config file" />
     <MESSAGE value="started a new test file and render. fixed a weird naming bug in blender script. did the killcode properly. sys args ftw." />
     <MESSAGE value="finished a test render. started adding the code sections for the complete note actions." />
@@ -697,7 +702,8 @@
     <MESSAGE value="added the other test models" />
     <MESSAGE value="some refactoring" />
     <MESSAGE value="refactorings yay" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactorings yay" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1094,8 +1100,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2371134">
-          <caret line="318" column="78" selection-start-line="318" selection-start-column="78" selection-end-line="318" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.44329897">
+          <caret line="91" column="47" selection-start-line="91" selection-start-column="47" selection-end-line="91" selection-end-column="47" />
           <folding />
         </state>
       </provider>
