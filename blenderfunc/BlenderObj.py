@@ -155,7 +155,6 @@ class BlenderObj:
             attackAction = self.parse_auto_action(auto_string,objName,"ATTACK",pitchAsNote,0)
             releaseAction = self.parse_auto_action(auto_string,objName,"RELEASE",pitchAsNote,0)
             vibratoAction = self.parse_auto_action(auto_string,objName,"VIBRATO",pitchAsNote,0)
-            waitAction = self.parse_auto_action(self.autoGenerateString,self.blenderObject,"WAIT",pitchAsNote,0)
             attackTime = self.guyConf["soundOptions"]["attack"]
             attackTime = self.millisecondsToFrames(attackTime)
             releaseTime = self.guyConf["soundOptions"]["release"]
@@ -249,7 +248,7 @@ class BlenderObj:
 
             with open("blenderfunc/blender_standardActionScript.py",'r') as f:
                 standard_data = f.read()
-                standard_data = standard_data.replace("%PITCH_ACTION%",pitchAction)
+                standard_data = standard_data.replace("%PITCH_ACTION%", pitchAction)
                 standard_data = standard_data.replace("%PRENOTE_ACTION%", preNoteAction)
                 standard_data = standard_data.replace("%ATTACK_ACTION%", attackAction)
                 standard_data = standard_data.replace("%ATTACK_TIME%", str(attackTime))
@@ -268,6 +267,8 @@ class BlenderObj:
                     dupl_command += "actionObj.animation_data_create()"
                 else:
                     dupl_command = "actionObj = {}".format(actionobj)
+                    dupl_command += "\n"
+                    dupl_command += "actionObj.animation_data_create()"
                 standard_data = standard_data.replace("%DUPLICATE_ME_SECTION%",dupl_command)
                 standard_data = standard_data.replace("%ACTION_OBJ%",actionobj)
                 standard_data = standard_data.replace("%NLA_BLENDS%",cmd_nla_blends)
@@ -306,11 +307,12 @@ class BlenderObj:
         eframe = self.update_action_delay(eframe)
 
         if no_pitch_action is False:
-            # actionobj = self.get_data_set()
+            actionobj = self.get_data_set()
 
             with open("blenderfunc/blender_continueActionScript.py", 'r') as f:
                 script = f.read()
-                script = script.replace("%CURRENT_ACTION%", pitchAction)
+                # script = script.replace("%CURRENT_ACTION%", pitchAction)
+                script = script.replace("%PITCH_ACTION%", pitchAction)
                 script = script.replace("%PRENOTE_ACTION%", preNoteAction)
                 script = script.replace("%ATTACK_ACTION%", attackAction)
                 script = script.replace("%ATTACK_TIME%", str(attackTime))
@@ -329,7 +331,7 @@ class BlenderObj:
                     dupl_command += "\n"
                     dupl_command += "actionObj.animation_data_create()"
                 else:
-                    dupl_command = "actionObj = {}".format(selObjName)
+                    dupl_command = "actionObj = {}".format(actionobj)
                 script = script.replace("%DUPLICATE_ME_SECTION%",dupl_command)
                 script = script.replace("%NOTE_START_FRAME%", str(sframe))
                 script = script.replace("%NOTE_END_FRAME%", str(eframe))

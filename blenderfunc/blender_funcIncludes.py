@@ -28,8 +28,7 @@ def buildContinueAction(curAction, newobj, noteStart, noteEnd):
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):
-                    # newfc = newobj.animation_data.action.fcurves
-                    newfc = j
+                    newfc = newobj.animation_data.action.fcurves
 
         # we need to figure out where the action officially starts to scale everything right
         left_most_point = 100000.0
@@ -259,8 +258,7 @@ def buildContinueActionV2(curAction, newobj, startFrame, noteStart, noteEnd, noR
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):
-                    newfc = j
-                    break
+                    newfc = newobj.animation_data.action.fcurves
 
         # we need to figure out where the action officially starts to scale everything right
         left_most_point = 100000.0

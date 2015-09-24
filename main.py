@@ -258,7 +258,8 @@ class animidi:
                 cycleChannels[cycx] = cycleConfs[cset]["channel"]
                 inum = 0
                 for i in cycleConfs[cset]["cycle_objects"].split(","):
-                    cycleList[cycx][inum] = i.strip(" ")
+                    i = i.strip(" ")
+                    cycleList[cycx][inum] = i
                     if i in bObjs:
                         del bObjs[i]
                     inum += 1
@@ -277,7 +278,7 @@ class animidi:
                 for co in cSet:
                     cObjs.append(ic)
                     coName = cSet[co]
-                    cObjs[ic] = bf.BlenderObj(coName,confFile,self.midiResolution,self.BPM)
+                    cObjs[ic] = bf.BlenderObj(coName, confFile, self.midiResolution, self.BPM)
                     cObjs[ic].set_framerate(self.FPS)
                     ic += 1
 
@@ -294,13 +295,12 @@ class animidi:
                 # move to the next objects means moving the channel
                 cSetPos += 1
 
-        # parse the existing blenderObjects, and send them to the animator.
+        # parse the existing / remaining blenderObjects, and send them to the animator.
         for bObj in bObjs:
             boName = bObj  # bObjs[bObj]['name']
             boChannel = bObjs[bObj]['channel']
             bo = bf.BlenderObj(boName, confFile,self.midiResolution,self.BPM)
             bo.set_framerate(self.FPS)
-
             for note_event in self.note_dataset:
                 if note_event['channel'] == boChannel:
                     bo.insert_note(boChannel,note_event['pitch'],note_event['velocity'],note_event['start_frame'],note_event['end_frame'])
