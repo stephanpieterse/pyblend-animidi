@@ -1,33 +1,48 @@
-== PyBlend - ANIMIDI ==
-= by stephanpieterse =
+# PyBlend - ANIMIDI
 
-This is a standalone python script generator inspired by Animusic[], which has seemingly disappeared into /dev/null.
+This is a standalone python script generator inspired by [Animusic](http://www.animusic.com/), which has seemingly disappeared into /dev/null.
 
 It generates a script that is to be used in Blender, which populates the NLA with actions specified in the config file according to the events in a MIDI file.
 It can also generate a single consolidated action that transitions nicely for things like armatures.
 
-MIDI Type 0 and Type 1 files are supported. Type 2 files could work, but are not tested.
+MIDI Type 1 files are semi supported and tested. Type 0 and 2 files should work, but are not tested.
 
-= Usage =
-write or get a song. generate midi for it. create a blender file with basic animations that are properly labelled. get a nice visual idea and make it in blender.
-
-edit the config file to match the settings of your blender project. it can be a bit labour intensive, be sure to stay focused.
-things are case sensitive.
-run the script in python (via command line or whatever preference)
+## Licence
 <pre>
-pyblend-animidi
+ Copyright (C) 2015 Stephan Pieterse
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 </pre>
 
-in blender, open the script in the text editor. Alt + P to run it.
-.....
-BOOM. Animusic to my face.
-Render
-Profit
+## Usage
+- Write or get a song. 
+- Generate MIDI and or a CSV file for it. 
+- Create a blender file with basic animations that are properly labelled. 
+- Get a nice visual idea and make it in blender.
+- Edit the config file to match the settings of your blender project. It can be a bit labour intensive, be sure to stay focused. Things are case sensitive.
+- Run the script in python (via command line or whatever preference)
+<pre>
+pyblend-animidi -c yourconfigfile.yml
+</pre>
 
-= Terminology =
-in the code, the object that is being animated is called a guy. guys don't have to exist in blender but their settings do.
+- In blender, open the script in the text editor. Alt + P to run it.
+- Be awesome
 
-= Config File =
+## Terminology
+In the code, the object that is being animated is called a / the "guy". Guys don't have to exist in Blender but their settings do.
+
+## Config File
 config file is a yaml file, it should be fairly self explanatory and commented in the default config too.
 please make sure of your indentation by checking the default config as well
 
@@ -65,18 +80,19 @@ blenderobjects:
     # you put the guys in here
 </pre>
 
-Cycle Sequences:
+### Cycle Sequences:
 <pre>
-cycle_sequences:
+ cycle_sequences:
     # a name for the sequence, can be anything
     bassGuy:
         # a collection of objects. these must exist in the blenderObjects (guys) section. comma-seperated
         cycle_objects: armDing, armDing2
         # the channel that the sequence operates from. overrides guy config.
-        channel: 2
+        channel: 2 
 </pre>
 
-Guys:
+### Guys
+
 <pre>
 # this is a guy. there can be many guys.
 piano_s:
@@ -143,19 +159,19 @@ piano_s:
                 vibratoAction: vibr
 </pre>
 
-= A Note on Actions =
-The formation of the actions is pretty much that of the sound.
-prenote -> attack -> note -> (vibrato) -> release
+## A Note on Actions
+The formation of the actions is pretty much that of the sound.  
+prenote -> attack -> note -> (vibrato) -> release  
 
-= Multiple Limbs on Guys =
+## Multiple Limbs on Guys
 if you want one guy to do something that looks polyrhythmic (think two handed drumming) it'll be best to map each limb out to a different midi channel and link the actions appropriately.
 
-= Cycling Objects =
-If you want to cycle the actions on a channel between objects, you can enable the cycle sequence parsing.
-This will change which objects is being sent an action, one for each. Think alternating drumsticks on a drum.
+## Cycling Objects
+If you want to cycle the actions on a channel between objects, you can enable the cycle sequence parsing.  
+This will change which objects is being sent an action, one for each. Think alternating drumsticks on a drum.  
 If an object is in a cycle sequence, it's normal config channel will be ignored, and it will only be sent data from the sequence channel.
 
-= Notes =
+## Notes
 Save a copy of your blend file befire doing anything. This is supposed to be non-destructive but I don't know how you'll use it.
 To ensure everything should work fine, in the NLA editor, after creating all your actions, make sure everything has a fake user and is unlinked from the objects.
 All note actions should have atleast 2 keyframes (time-wise), as this prevents odd behaviour with time / scaling. They can be one frame apart.
@@ -163,7 +179,7 @@ After the script ran in blender, go to the fcurve window, select all the objects
 Material and Shapekey actions aren't that obvious to find, but they can be done from the NLA editor or the Outliner.
 Shader Nodetrees on materials are a work in progress.
 
-= Debugging =
+## Debugging
 There is very limited error checking currently built into the script, but some sane default values.
 If it's not working, or not as expected, check the following:
 Config file valid syntax
@@ -171,30 +187,29 @@ Config file correct naming and structure (Things are case sensitive!)
 Blender objects and animations exist and have correct names
 Blender might also just exit if it ran out of memory.
 
-= I need more channels! =
-If one midi file doesn't have enough channels for you, create another instance with a new config and another midi file containing the rest of the channels
-The script can parse multiple config files from one instace.
-this just outputs a script which blender reads. so it's pretty stackable.
+## I need more channels!
+If one midi file doesn't have enough channels for you, create another instance with a new config and another midi file containing the rest of the channels.  
+The script can parse multiple config files from one instance.  
+This just outputs a script which blender reads. so it's pretty stackable.
 
-= I need more speed! =
+## I need more speed!
 from python, generating a script to be used can take a few seconds.
 from blender, running the script (which usually is a few thousand lines) could take anything from a few seconds to a couple of minutes.
 Try importing for one channel at a time, or limiting the frame range you want animated to test everything out before running the full script.
 
-= Test Bench =
-acer travelmate 5742
-2.67ghz core i5 480m
-4gb ram
-linux mint 17.2 cinnamon 64-bit
-python2.7
-blender v2.69
+## Test Bench
+- Acer Travelmate 5742
+- 2.67GHz Core i5 480M
+- 4GB RAM
 
-= special thanks and tech =
-[the python midi parser]() - Sources included
-tuxguitar, lmms, reaper.
-[midicsv]() - Included
-the blender foundation, for their awesome tool - [blender](http://www.blender.org)
-[python](http://www.python.org)
+## Technology Used
+- [the python midi parser]() - Included
+- [Tuxguitar](http://sourceforge.net/projects/tuxguitar/)
+- [LMMS](https://lmms.io/)
+- [midicsv]() - Included
+- [Blender](http://www.blender.org)
+- [Python](http://www.python.org)
+- [Linux Mint 17.2 Cinnamon 64-bit](http://linuxmint.com/)
 
-= bug reporting and troubleshooting =
+## Contact and such
 stephanpieterse@rubyhemisphere.dedicated.co.za
