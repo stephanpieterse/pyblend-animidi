@@ -28,7 +28,8 @@ def buildContinueAction(curAction, newobj, noteStart, noteEnd):
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):
-                    newfc = newobj.animation_data.action.fcurves
+                    #newfc = newobj.animation_data.action.fcurves
+                    newfc = j
 
         # we need to figure out where the action officially starts to scale everything right
         left_most_point = 100000.0
@@ -90,12 +91,12 @@ def duplicateObject(scene, name, copy_obj):
 
 
 # this is just a wrapper so we don't have to specify nla values for fcurves
-def populateActionFromListFCurve(action_list,action_object, calc_frame, start_frame, end_frame):
-    return populateActionFromList(action_list,action_object, calc_frame, start_frame, end_frame, 'HOLD', 'REPLACE', False, 'FCURVE')
+def populateActionFromListFCurve(action_list, action_object, calc_frame, start_frame, end_frame):
+    return populateActionFromList(action_list, action_object, calc_frame, start_frame, end_frame, 'HOLD', 'REPLACE', False, 'FCURVE')
 
 
 # mode can be either 'NLA' or 'FCURVE'
-def populateActionFromList(action_list,action_object, calc_frame, start_frame, end_frame, nla_extrap, nla_blend, nla_autoblend, mode = 'NLA'):
+def populateActionFromList(action_list, action_object, calc_frame, start_frame, end_frame, nla_extrap, nla_blend, nla_autoblend, mode = 'NLA'):
     # take the start and end frames for each note, and space the actions specified into that space.
     # the total length should include: attack, note, (vibrato)
     # the prenote is not relative, and ENDS at the start of the attack frame action
@@ -174,7 +175,6 @@ def populateActionFromList(action_list,action_object, calc_frame, start_frame, e
                 VibratoStrip.extrapolation = nla_extrap
                 VibratoStrip.blend_type = nla_blend
                 VibratoStrip.use_auto_blend = nla_autoblend
-
             elif mode == 'FCURVE':
                 buildContinueActionV2(vibratoAction, action_object, NoteStrip.frame_end, 0, vibratoActionTime)
             release_start = fullNoteEnd
@@ -190,7 +190,7 @@ def populateActionFromList(action_list,action_object, calc_frame, start_frame, e
                 release_start = NoteStrip.frame_end
                 last_frame = NoteStrip.frame_end
             elif mode == 'FCURVE':
-                buildContinueActionV2(curAction, action_object, AttackActionEnd, start_frame, end_frame)
+                buildContinueActionV2(noteAction, action_object, AttackActionEnd, start_frame, end_frame)
                 action_end = AttackActionEnd + action_length
                 actionRelScale = get_relative_action_scale(AttackActionEnd, action_end, start_frame, end_frame)
                 release_start = get_frame_shift(actionRelScale, AttackActionEnd, action_end)
@@ -254,11 +254,12 @@ def buildContinueActionV2(curAction, newobj, startFrame, noteStart, noteEnd, noR
                 rna_index_exists = True
 
         if rna_index_exists is False:
-            newfc = newobj.animation_data.action.fcurves.new(i.data_path,i.array_index,i.group.name)
+            newfc = newobj.animation_data.action.fcurves.new(i.data_path, i.array_index, i.group.name)
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):
-                    newfc = newobj.animation_data.action.fcurves
+                    # newfc = newobj.animation_data.action.fcurves
+                    newfc = j
 
         # we need to figure out where the action officially starts to scale everything right
         left_most_point = 100000.0

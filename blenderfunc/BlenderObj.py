@@ -267,8 +267,8 @@ class BlenderObj:
                     dupl_command += "actionObj.animation_data_create()"
                 else:
                     dupl_command = "actionObj = {}".format(actionobj)
-                    dupl_command += "\n"
-                    dupl_command += "actionObj.animation_data_create()"
+                    # dupl_command += "\n"
+                    # dupl_command += "actionObj.animation_data_create()"
                 standard_data = standard_data.replace("%DUPLICATE_ME_SECTION%",dupl_command)
                 standard_data = standard_data.replace("%ACTION_OBJ%",actionobj)
                 standard_data = standard_data.replace("%NLA_BLENDS%",cmd_nla_blends)

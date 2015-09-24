@@ -13,6 +13,7 @@ curReleaseAction = "%RELEASE_ACTION%" # curReleaseAction = bpy.data.actions["%RE
 curReleaseTime = %RELEASE_TIME%
 curVibratoAction = "%VIBRATO_ACTION%" # curVibratoAction = bpy.data.actions["%VIBRATO_ACTION%"]
 curVibratoTime = 0
+the_new_action = "%NEW_ACTION%"
 # restAction = bpy.data.actions["%REST_ACTION%"]
 %DUPLICATE_ME_SECTION%
 
@@ -28,6 +29,7 @@ if curVibratoAction != "":
 if curReleaseAction != "":
     action_list['release'] = { 'action': curReleaseAction, 'time': curReleaseTime}
 
+# populateActionFromListFCurve(action_list, actionObj, calc_frame, noteStart, noteEnd)
 populateActionFromListFCurve(action_list, actionObj, calc_frame, noteStart, noteEnd)
 # curAction = bpy.data.actions[curAction]
 # buildContinueAction(curAction, newobj, noteStart, noteEnd)
