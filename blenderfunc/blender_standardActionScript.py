@@ -26,11 +26,9 @@ noteEnd = %NOTE_END_FRAME%
 
 actionStartFrame = %CALCULATED_FRAME%
 bpy.context.scene.frame_set(%CALCULATED_FRAME%)
-actionObj = %ACTION_OBJ%
 %DUPLICATE_ME_SECTION%
 
 %NLA_BLENDS%
-
 last_frame = populateActionFromList(action_list, actionObj, actionStartFrame, noteStart, noteEnd, nla_extrap, nla_blend, nla_autoblend)
 killFrame = last_frame
 %DUPLI_KILL%
