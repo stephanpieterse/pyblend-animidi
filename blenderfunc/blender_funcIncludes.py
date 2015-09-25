@@ -111,7 +111,8 @@ def populateActionFromList(action_list, action_object, calc_frame, start_frame, 
     # a note on blender: the nla strips support setting the start to a float number, but not inserting as.
     #   that's why we have a magic number one to just shift it for the insertion, and set it to where it should
     #   be right after.
-
+    if action_object.animation_data is None:
+        action_object.animation_data_create()
     NLATrack = action_object.animation_data.nla_tracks.new()
 
     if 'prenote' in action_list.keys():

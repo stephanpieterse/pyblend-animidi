@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9474336e-6782-4901-9752-01436eb4ae98" name="Default" comment="fixed stuff and unfixed and i dunno">
+    <list default="true" id="9474336e-6782-4901-9752-01436eb4ae98" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blenderfunc/BlenderObj.py" afterPath="$PROJECT_DIR$/blenderfunc/BlenderObj.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blenderfunc/blender_standardActionScript.py" afterPath="$PROJECT_DIR$/blenderfunc/blender_standardActionScript.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py" afterPath="$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pyblend-animidi.iws" />
@@ -50,8 +50,8 @@
       <file leaf-file-name="BlenderObj.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.0">
-              <caret line="204" column="36" selection-start-line="204" selection-start-column="36" selection-end-line="204" selection-end-column="36" />
+            <state vertical-scroll-proportion="-6.83871">
+              <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -67,21 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blender_standardActionScript.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="blender_standardActionScript.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blenderfunc/blender_standardActionScript.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6769984">
+            <state vertical-scroll-proportion="0.0">
               <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blender_funcIncludes.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blender_funcIncludes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="199" column="48" selection-start-line="199" selection-start-column="48" selection-end-line="199" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.55954325">
+              <caret line="113" column="43" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -167,9 +167,9 @@
         <option value="$PROJECT_DIR$/pyblend-animidi.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/blenderfunc/blender_continueActionScript.py" />
-        <option value="$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py" />
-        <option value="$PROJECT_DIR$/blenderfunc/BlenderObj.py" />
         <option value="$PROJECT_DIR$/blenderfunc/blender_standardActionScript.py" />
+        <option value="$PROJECT_DIR$/blenderfunc/BlenderObj.py" />
+        <option value="$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py" />
       </list>
     </option>
   </component>
@@ -672,7 +672,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443122570751</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="default values for attack etc now also read. fixed a duplicate unused line.">
+      <created>1443186576117</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1443186576117</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView">
@@ -688,11 +694,12 @@
     <frame x="-1" y="0" width="1368" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24869695" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15711094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15711094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5026061" order="8" side_tool="true" content_ui="tabs" />
@@ -702,12 +709,32 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52202284" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5026061" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54323" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24869695" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15711094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52202284" sideWeight="0.4973939" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -722,7 +749,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="udpated readme. did some of the vibrato code" />
     <MESSAGE value="fixed the millisecond function. implementing more of the completed note actions. changed a list to a dict. generally it works better" />
     <MESSAGE value="some updates" />
     <MESSAGE value="used note default from config file - now in global options" />
@@ -747,7 +773,8 @@
     <MESSAGE value="licencing and refactoring" />
     <MESSAGE value="fixed a continuation problem and refactored" />
     <MESSAGE value="fixed stuff and unfixed and i dunno" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed stuff and unfixed and i dunno" />
+    <MESSAGE value="default values for attack etc now also read. fixed a duplicate unused line." />
+    <option name="LAST_COMMIT_MESSAGE" value="default values for attack etc now also read. fixed a duplicate unused line." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1113,14 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="199" column="48" selection-start-line="199" selection-start-column="48" selection-end-line="199" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1128,14 +1147,6 @@
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.0">
-          <caret line="204" column="36" selection-start-line="204" selection-start-column="36" selection-end-line="204" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,10 +1158,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blenderfunc/BlenderObj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.83871">
+          <caret line="188" column="20" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blenderfunc/blender_standardActionScript.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6769984">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55954325">
+          <caret line="113" column="43" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
           <folding />
         </state>
       </provider>

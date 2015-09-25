@@ -186,7 +186,7 @@ class BlenderObj:
                         attackTime = self.millisecondsToFrames(attackTime)
                     except KeyError:
                         pass
-                     try:
+                    try:
                         releaseAction = self.guyConf["notes"]["default"]["releaseAction"]
                         releaseTime = self.guyConf["soundOptions"]["release"]
                         releaseTime = self.millisecondsToFrames(releaseTime)
