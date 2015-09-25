@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9474336e-6782-4901-9752-01436eb4ae98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blenderfunc/BlenderObj.py" afterPath="$PROJECT_DIR$/blenderfunc/BlenderObj.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py" afterPath="$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -80,8 +79,8 @@
       <file leaf-file-name="blender_funcIncludes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55954325">
-              <caret line="113" column="43" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.9119086">
+              <caret line="197" column="42" selection-start-line="197" selection-start-column="42" selection-end-line="197" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -678,7 +677,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443186576117</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="fixed an indent. added check for blank animation data and instantiate">
+      <created>1443187057639</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1443187057639</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView">
@@ -749,7 +754,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixed the millisecond function. implementing more of the completed note actions. changed a list to a dict. generally it works better" />
     <MESSAGE value="some updates" />
     <MESSAGE value="used note default from config file - now in global options" />
     <MESSAGE value="started with the new form continue action script" />
@@ -774,7 +778,8 @@
     <MESSAGE value="fixed a continuation problem and refactored" />
     <MESSAGE value="fixed stuff and unfixed and i dunno" />
     <MESSAGE value="default values for attack etc now also read. fixed a duplicate unused line." />
-    <option name="LAST_COMMIT_MESSAGE" value="default values for attack etc now also read. fixed a duplicate unused line." />
+    <MESSAGE value="fixed an indent. added check for blank animation data and instantiate" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed an indent. added check for blank animation data and instantiate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1176,8 +1181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blenderfunc/blender_funcIncludes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55954325">
-          <caret line="113" column="43" selection-start-line="113" selection-start-column="43" selection-end-line="113" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.9119086">
+          <caret line="197" column="42" selection-start-line="197" selection-start-column="42" selection-end-line="197" selection-end-column="42" />
           <folding />
         </state>
       </provider>

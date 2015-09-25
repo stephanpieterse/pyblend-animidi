@@ -195,6 +195,7 @@ def populateActionFromList(action_list, action_object, calc_frame, start_frame, 
                 action_end = AttackActionEnd + action_length
                 actionRelScale = get_relative_action_scale(AttackActionEnd, action_end, start_frame, end_frame)
                 release_start = get_frame_shift(actionRelScale, AttackActionEnd, action_end)
+                last_frame = release_start
 
         NoteStrip.extrapolation = nla_extrap
         NoteStrip.blend_type = nla_blend
@@ -221,6 +222,7 @@ def populateActionFromList(action_list, action_object, calc_frame, start_frame, 
             action_end = AttackActionEnd + action_length
             actionRelScale = get_relative_action_scale(AttackActionEnd, action_end, start_frame, end_frame)
             release_start = get_frame_shift(actionRelScale, AttackActionEnd, action_end)
+            last_frame = release_start
 
     if 'release' in action_list.keys():
         curAction = bpy.data.actions[action_list['release']['action']]
