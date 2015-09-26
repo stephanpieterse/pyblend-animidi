@@ -134,9 +134,11 @@ class BlenderObj:
         if guyAnimType == "shapekey":
             actionobj = "bpy.data.shape_keys[\"{}\"]".format(selObjName)
 
-        # todo find out what this should be
         if guyAnimType == "mat_nodes":
-            actionobj = "bpy.data.shape_keys[\"{}\"]".format(selObjName)
+            actionobj = "bpy.data.node_groups[\"{}\"]".format(selObjName)
+
+        if guyAnimType == "light":
+            actionobj = "bpy.data.lamps[\"{}\"]".format(selObjName)
 
         if actionobj == "":
             print "invalid object type assignment"
