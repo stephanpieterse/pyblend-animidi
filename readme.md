@@ -97,7 +97,9 @@ blenderobjects:
 # this is a guy. there can be many guys.
 piano_s:
         objectOptions:
-            # object, material, shapekey, light, mat_nodes. object should also be used for armature.
+            # object, material, shapekey, light, mat_nodes, particles, world, scene, camera.
+            # object should also be used for armature.
+            # constraints and modifiers, along with force fields and cloths etc. seem to all use the normal object action.
             objectType: shapekey
             # should the script create a duplicate of this object to animate? see animusic
             shouldCreate: false
