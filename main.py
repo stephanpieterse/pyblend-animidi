@@ -237,8 +237,6 @@ class animidi:
 
         # blender objects - will be modified later on
         bObjs = confFile.getConfig('blenderobjects')
-        # all objects - a copy that stays the same.
-        aObjs = confFile.getConfig('blenderobjects')
 
         try:
             should_cycle = confOptions['parseCycleSequences']
@@ -318,4 +316,4 @@ class animidi:
             f.write(last_action)
             f.close()
 
-        print "you can now import the script {} into blender and run it.".format(outputScriptName)
+        print "you can now import the script {} into Blender and run it.".format(outputScriptName)

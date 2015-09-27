@@ -213,3 +213,7 @@ Try importing for one channel at a time, or limiting the frame range you want an
 
 ## Contact and such
 stephanpieterse@rubyhemisphere.dedicated.co.za
+
+## Bug reporting
+If you think you have found a bug, you might need to submit the blend file,
+the midi / csv file, as well as the config file.

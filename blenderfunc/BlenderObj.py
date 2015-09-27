@@ -146,7 +146,7 @@ class BlenderObj:
 
         return actionobj
 
-    def getPitchAction(self,pitch):
+    def get_pitch_action(self,pitch):
         noPitchAction = False
         pitchAction = None
         pitchAsNote = self.pitch_as_note(pitch)
@@ -267,7 +267,7 @@ class BlenderObj:
 
         standard_data = ""
 
-        pitch_result = self.getPitchAction(pitch)
+        pitch_result = self.get_pitch_action(pitch)
         pitchAction = pitch_result['pitch']
         no_pitch_action = pitch_result['noPitch']
         preNoteAction = pitch_result['preNote']
@@ -327,7 +327,7 @@ class BlenderObj:
     def continueScript(self, pitch, vel, sframe, eframe):
         should_create = self.guyConf["objectOptions"]["shouldCreate"]
         destroy_when_done = self.guyConf["objectOptions"]["destroyWhenDone"]
-        pitch_result = self.getPitchAction(pitch)
+        pitch_result = self.get_pitch_action(pitch)
         pitchAction = pitch_result['pitch']
         no_pitch_action = pitch_result['noPitch']
         preNoteAction = pitch_result['preNote']
