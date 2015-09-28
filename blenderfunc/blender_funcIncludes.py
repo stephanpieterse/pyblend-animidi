@@ -28,7 +28,6 @@ def buildContinueAction(curAction, newobj, noteStart, noteEnd):
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):
-                    #newfc = newobj.animation_data.action.fcurves
                     newfc = j
 
         # we need to figure out where the action officially starts to scale everything right
@@ -261,7 +260,6 @@ def buildContinueActionV2(curAction, newobj, startFrame, noteStart, noteEnd, noR
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):
-                    # newfc = newobj.animation_data.action.fcurves
                     newfc = j
 
         # we need to figure out where the action officially starts to scale everything right

@@ -23,7 +23,6 @@ if curReleaseAction != "":
 
 noteStart = %NOTE_START_FRAME%
 noteEnd = %NOTE_END_FRAME%
-
 actionStartFrame = %CALCULATED_FRAME%
 bpy.context.scene.frame_set(%CALCULATED_FRAME%)
 %DUPLICATE_ME_SECTION%

@@ -80,10 +80,11 @@ def main(argv):
 
         if is_file:
             print("Currently running for {} ...".format(config))
-            genScript = animidi(config)
-            genScript.main()
+            gen_script = animidi(config)
+            gen_script.main()
         else:
-            print("Specified config file {} could not be found, or is not a file. Please check your spelling and try again!".format(config))
+            print("Specified config file {} could not be found, or is not a file."
+                  " Please check your spelling and try again!".format(config))
 
 
 if __name__ == "__main__":
