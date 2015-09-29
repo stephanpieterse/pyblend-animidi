@@ -1,11 +1,13 @@
 # PyBlend - ANIMIDI
 
-This is a standalone python script generator inspired by [Animusic](http://www.animusic.com/), which has seemingly disappeared into /dev/null.
+This is a standalone python script generator inspired by [Animusic](http://www.animusic.com/).
 
 It generates a script that is to be used in Blender, which populates the NLA with actions specified in the config file according to the events in a MIDI file.
 It can also generate a single consolidated action that transitions nicely for things like armatures.
 
 MIDI Type 1 files are semi supported and tested. Type 0 and 2 files should work, but are not tested.
+
+CSV files have been tested in the format made by midicsv.
 
 ## Licence
 <pre>
@@ -33,18 +35,20 @@ MIDI Type 1 files are semi supported and tested. Type 0 and 2 files should work,
 - Edit the config file to match the settings of your blender project. It can be a bit labour intensive, be sure to stay focused. Things are case sensitive.
 - Run the script in python (via command line or whatever preference)
 <pre>
-pyblend-animidi -c yourconfigfile.yml
+python pyblend-animidi -c yourconfigfile.yml
 </pre>
 
-- In blender, open the script in the text editor. Alt + P to run it.
-- Be awesome
+- In blender, open the script in the text editor. Alt + P to run it, or press "Run Script"
+
+## Rendering
+This was tested using Blender Internal as well as Cycles. I'm not sure how external renderers will react. If tested, please let me know!
 
 ## Terminology
 In the code, the object that is being animated is called a / the "guy". Guys don't have to exist in Blender but their settings do.
 
 ## Config File
-config file is a yaml file, it should be fairly self explanatory and commented in the default config too.
-please make sure of your indentation by checking the default config as well
+Config file is a yaml file, it should be fairly self explanatory and commented in the default config too. (config.example.yaml)  
+Please make sure of your indentation by checking the default config as well
 
 <pre>
 # use absolute paths ... it just works better
@@ -165,29 +169,31 @@ piano_s:
 The formation of the actions is pretty much that of the sound.  
 prenote -> attack -> note -> (vibrato) -> release  
 
+For non-musical uses, only the note action is required, so you can use that.
+
 ## Multiple Limbs on Guys
-if you want one guy to do something that looks polyrhythmic (think two handed drumming) it'll be best to map each limb out to a different midi channel and link the actions appropriately.
+If you want one guy to do something that looks polyrhythmic (think two handed drumming) it'll be best to map each limb out to a different midi channel and link the actions appropriately. Or for basic stuff you can use cycling objects.
 
 ## Cycling Objects
 If you want to cycle the actions on a channel between objects, you can enable the cycle sequence parsing.  
 This will change which objects is being sent an action, one for each. Think alternating drumsticks on a drum.  
-If an object is in a cycle sequence, it's normal config channel will be ignored, and it will only be sent data from the sequence channel.
+If an object is in a cycle sequence, it's normal config channel will be ignored, and it will only be sent data from the channel specified in the cycle options.
 
 ## Notes
-Save a copy of your blend file befire doing anything. This is supposed to be non-destructive but I don't know how you'll use it.
-To ensure everything should work fine, in the NLA editor, after creating all your actions, make sure everything has a fake user and is unlinked from the objects.
-All note actions should have atleast 2 keyframes (time-wise), as this prevents odd behaviour with time / scaling. They can be one frame apart.
-After the script ran in blender, go to the fcurve window, select all the objects, grab a single handle, move it a bit and then cancel. This recalculates the handles. i had a fix but it started deleting keyframes, and there is a fix in the newer versions of blender, but i want to keep it slightly backwards compatible.
-Material and Shapekey actions aren't that obvious to find, but they can be done from the NLA editor or the Outliner.
-Shader Nodetrees on materials are a work in progress.
+Save a copy of your blend file befire doing anything. This is supposed to be non-destructive but I don't know how you'll use it.  
+To ensure everything should work fine, in the NLA editor, after creating all your actions, make sure everything has a fake user and is unlinked from the objects.  
+All note actions should have atleast 2 keyframes (time-wise), as this prevents odd behaviour with time / scaling. They can be one frame apart.  
+After the script ran in blender, go to the fcurve window, select all the objects, grab a single handle, move it a bit and then cancel. This recalculates the handles. I had a fix but it started deleting keyframes, and there is a fix in the newer versions of Blender apparently, but i want to keep it slightly backwards compatible.  
+Material and Shapekey and some other actions aren't that obvious to find, but they can be done from the NLA editor or the Outliner.   
 
 ## Debugging
 There is very limited error checking currently built into the script, but some sane default values.
 If it's not working, or not as expected, check the following:
-Config file valid syntax
-Config file correct naming and structure (Things are case sensitive!)
-Blender objects and animations exist and have correct names
-Blender might also just exit if it ran out of memory.
+- Config file valid syntax
+- Config file correct naming and structure (Things are case sensitive!)
+- Blender objects and animations exist and have correct names
+- All Blender actions are fake usered and unlinked from objects.
+- Blender might also just exit if it ran out of memory.
 
 ## I need more channels!
 If one midi file doesn't have enough channels for you, create another instance with a new config and another midi file containing the rest of the channels.  
@@ -195,9 +201,16 @@ The script can parse multiple config files from one instance.
 This just outputs a script which blender reads. so it's pretty stackable.
 
 ## I need more speed!
-from python, generating a script to be used can take a few seconds.
-from blender, running the script (which usually is a few thousand lines) could take anything from a few seconds to a couple of minutes.
+From python, generating a script to be used can take a few minutes.  
+From blender, running the script (which usually is a few thousand lines) could take anything from a few seconds to a couple of minutes.  
 Try importing for one channel at a time, or limiting the frame range you want animated to test everything out before running the full script.
+
+## Future Development
+I am looking at building this into a full fledged Blender plugin, where everything can be managed from inside Blender.  
+Different animations / variations of them based on velocity.  
+Cutting vibrato animations instead of scaling them for more realism.  
+This was all done and tested on python2.7 (due to an admin error) but I hope to make it fully python3 compliant.  
+This is NOT PEP8 compliant... yet...
 
 ## Test Bench
 - Acer Travelmate 5742
@@ -205,17 +218,19 @@ Try importing for one channel at a time, or limiting the frame range you want an
 - 4GB RAM
 
 ## Technology Used
-- [the python midi parser]() - Included
+- [vishnubob/python-midi](https://github.com/vishnubob/python-midi) - Included
 - [Tuxguitar](http://sourceforge.net/projects/tuxguitar/)
 - [LMMS](https://lmms.io/)
-- [midicsv]() - Included
+- [midicsv](http://www.fourmilab.ch/webtools/midicsv/) - Included
 - [Blender](http://www.blender.org)
 - [Python](http://www.python.org)
 - [Linux Mint 17.2 Cinnamon 64-bit](http://linuxmint.com/)
+- [PyCharm](http://www.jetbrains.com/pycharm/)
 
 ## Contact and such
 stephanpieterse@rubyhemisphere.dedicated.co.za
 
 ## Bug reporting
+Create an issue on GitHub.  
 If you think you have found a bug, you might need to submit the blend file,
-the midi / csv file, as well as the config file.
+the midi / csv file, as well as the config file via e-mail, but this should only be for really strange errors.
