@@ -33,13 +33,15 @@ def buildContinueAction(curAction, newobj, noteStart, noteEnd):
                     newfc = j
 
         # we need to figure out where the action officially starts to scale everything right
-        left_most_point = 100000.0
-        right_most_point = 0.0
+        left_most_point = float('inf')
+        right_most_point = float('-inf')
         for y in i.keyframe_points:
-            if y.co.x <= left_most_point:
-                left_most_point = y.co.x
-            if y.co.x >= right_most_point:
-                right_most_point = y.co.x
+            left_most_point = min(y.co.x, left_most_point)
+            right_most_point = max(y.co.x, right_most_point)
+            #if y.co.x <= left_most_point:
+            #    left_most_point = y.co.x
+            #if y.co.x >= right_most_point:
+            #    right_most_point = y.co.x
 
         actionRelScale = get_relative_action_scale(left_most_point,right_most_point,noteStart,noteEnd)
 
@@ -60,9 +62,9 @@ def buildContinueAction(curAction, newobj, noteStart, noteEnd):
                 new_co = [curX + get_frame_shift(actionRelScale,left_most_point,x.co.x),x.co.y]
                 newfc.keyframe_points.add(1)
                 newfc.keyframe_points[fckp].co = new_co
-                newfc.keyframe_points[fckp].handle_left = [curX + get_frame_shift(actionRelScale,left_most_point,x.handle_left.x), x.handle_left.y]
+                newfc.keyframe_points[fckp].handle_left = [curX + get_frame_shift(actionRelScale, left_most_point, x.handle_left.x), x.handle_left.y]
                 newfc.keyframe_points[fckp].handle_left_type = x.handle_left_type
-                newfc.keyframe_points[fckp].handle_right = [curX + get_frame_shift(actionRelScale,left_most_point,x.handle_right.x), x.handle_right.y]
+                newfc.keyframe_points[fckp].handle_right = [curX + get_frame_shift(actionRelScale, left_most_point, x.handle_right.x), x.handle_right.y]
 
                 newfc.keyframe_points[fckp].handle_right_type = x.handle_right_type
                 newfc.keyframe_points[fckp].interpolation = x.interpolation
@@ -295,9 +297,9 @@ def buildContinueActionV2(curAction, newobj, startFrame, noteStart, noteEnd, noR
                 new_co = [curX + get_frame_shift(actionRelScale,left_most_point,x.co.x),x.co.y]
                 newfc.keyframe_points.add(1)
                 newfc.keyframe_points[fckp].co = new_co
-                newfc.keyframe_points[fckp].handle_left = [curX + get_frame_shift(actionRelScale,left_most_point,x.handle_left.x), x.handle_left.y]
+                newfc.keyframe_points[fckp].handle_left = [curX + get_frame_shift(actionRelScale, left_most_point, x.handle_left.x), x.handle_left.y]
                 newfc.keyframe_points[fckp].handle_left_type = x.handle_left_type
-                newfc.keyframe_points[fckp].handle_right = [curX + get_frame_shift(actionRelScale,left_most_point,x.handle_right.x), x.handle_right.y]
+                newfc.keyframe_points[fckp].handle_right = [curX + get_frame_shift(actionRelScale, left_most_point, x.handle_right.x), x.handle_right.y]
                 newfc.keyframe_points[fckp].handle_right_type = x.handle_right_type
                 newfc.keyframe_points[fckp].interpolation = x.interpolation
             fckp += 1

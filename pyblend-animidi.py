@@ -43,11 +43,13 @@ def main(argv):
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    This is a python script that creates a script to be used in Blender, to map predefined data to object animations.
+    This is a python script that creates a script to be used in Blender,
+    to map predefined data to object animations.
 
     -h Shows this help message and exits.
     -V Shows current script version and exits.
-    -c Specify a config file to be used. Default is config.yml in the same directory as this script.
+    -c Specify a config file to be used. Default is config.yml in the same
+        directory as this script.
 
     Multiple config files can be parsed, each specified by -c.
     Example:
@@ -55,7 +57,7 @@ def main(argv):
 """
 
     try:
-        opts,args = getopt.getopt(argv,"hVc:")
+        opts, args = getopt.getopt(argv, "hVc:")
     except getopt.GetoptError:
         print("Use -h to get help")
         sys.exit(2)
@@ -83,7 +85,7 @@ def main(argv):
             gen_script = animidi(config)
             gen_script.main()
         else:
-            print("Specified config file {} could not be found, or is not a file."
+            print("Specified config file {} is invalid."
                   " Please check your spelling and try again!".format(config))
 
 

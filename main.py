@@ -20,6 +20,7 @@ import pythonmidi
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+
 class animidi:
     note_dataset = []
     midiResolution = 480
@@ -27,7 +28,7 @@ class animidi:
     FPS = 25
     configFile = ""
 
-    def __init__(self,configFile = "config.yml"):
+    def __init__(self, configFile="config.yml"):
         self.configFile = configFile
 
     def build_dataset_from_midi(self):
@@ -43,7 +44,7 @@ class animidi:
 
         fps = confOptions['blendFramerate']
         self.FPS = fps
-        frame_range = [ confOptions['frameStart'],confOptions['frameEnd'] ]
+        frame_range = [confOptions['frameStart'], confOptions['frameEnd']]
 
         tx = 0
         found_tempo = False
@@ -62,7 +63,7 @@ class animidi:
             if found_tempo is True:
                 break
 
-        midiUtil = midiUtility(self.midiResolution,self.BPM,self.FPS)
+        midiUtil = midiUtility(self.midiResolution, self.BPM, self.FPS)
 
         # if pattern.tick_relative == False:
         pattern.make_ticks_rel()
@@ -83,7 +84,7 @@ class animidi:
                 globalTick = globalTick + ntick
                 whichFrame = midiUtil.tickToFrame(globalTick)
 
-                if not whichFrame in range(frame_range[0],frame_range[1]):
+                if whichFrame not in range(frame_range[0], frame_range[1]):
                     x = x + 1
                     continue
 
@@ -145,9 +146,9 @@ class animidi:
 
         fps = confOptions['blendFramerate']
         self.FPS = fps
-        frame_range = [ confOptions['frameStart'],confOptions['frameEnd'] ]
+        frame_range = [confOptions['frameStart'], confOptions['frameEnd']]
 
-        midiUtil = midiUtility(self.midiResolution,self.BPM,self.FPS)
+        midiUtil = midiUtility(self.midiResolution, self.BPM, self.FPS)
 
         globalNote = 0
         with open(midifile) as f:
@@ -161,7 +162,7 @@ class animidi:
                 whichFrame = midiUtil.tickToFrame(ntick)
 
                 if whichFrame < frame_range[0] or whichFrame > frame_range[1]:
-                     continue
+                    continue
 
                 tname = tname.lower()
                 tname = tname.strip(" ")
@@ -200,7 +201,7 @@ class animidi:
         print("done building dataset...")
 
     # utility function
-    def cycle_number(self,num,max):
+    def cycle_number(self, num, max):
         num += 1
         if num <= max:
             return num
@@ -287,8 +288,12 @@ class animidi:
                 # for each note, check channel, do the object, change the cycle pos.
                 for note_event in self.note_dataset:
                     if note_event['channel'] == cycleChannel:
-                        cObjs[cyclePos].insert_note(cycleChannel,note_event['pitch'],note_event['velocity'],note_event['start_frame'],note_event['end_frame'])
-                        cyclePos = self.cycle_number(cyclePos,cycleMax)
+                        cObjs[cyclePos].insert_note(cycleChannel,
+                                                    note_event['pitch'],
+                                                    note_event['velocity'],
+                                                    note_event['start_frame'],
+                                                    note_event['end_frame'])
+                        cyclePos = self.cycle_number(cyclePos, cycleMax)
 
                 # write all the cycled objects scripts to file, finally
                 for cObj in cObjs:
@@ -301,16 +306,19 @@ class animidi:
         for bObj in bObjs:
             boName = bObj  # bObjs[bObj]['name']
             boChannel = bObjs[bObj]['channel']
-            bo = bf.BlenderObj(boName, confFile,self.midiResolution,self.BPM)
+            bo = bf.BlenderObj(boName, confFile, self.midiResolution, self.BPM)
             bo.set_framerate(self.FPS)
             for note_event in self.note_dataset:
                 if note_event['channel'] == boChannel:
-                    bo.insert_note(boChannel,note_event['pitch'],note_event['velocity'],note_event['start_frame'],note_event['end_frame'])
+                    bo.insert_note(boChannel, note_event['pitch'],
+                                   note_event['velocity'],
+                                   note_event['start_frame'],
+                                   note_event['end_frame'])
 
             bo.write_blender_script()
 
         # do the f-curve handle refreshing. no longer used really. the clean messes up our keyframes.
-        with open("blenderfunc/blender_endScriptRefresh.py",'r') as f:
+        with open("blenderfunc/blender_endScriptRefresh.py", 'r') as f:
             last_action = f.read()
             f.close()
 
@@ -320,4 +328,4 @@ class animidi:
             f.write(last_action)
             f.close()
 
-        print("you can now import the script {} into Blender and run it.".format(outputScriptName))
+        print("You can now import the script {} into Blender and run it.".format(outputScriptName))

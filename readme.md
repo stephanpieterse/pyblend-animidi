@@ -56,7 +56,7 @@ Please make sure of your indentation by checking the default config as well
 midifile:
     # name of the input file to parse.
     name: "/home/stephan/dev/pyblend-animidi/test/test2.csv"
-    # this can either be a csv or midi file, with mode csv or midi
+    # this can either be a csv or midi
     mode: csv
 
 scriptOutput:
@@ -210,15 +210,13 @@ Try importing for one channel at a time, or limiting the frame range you want an
 I am looking at building this into a full fledged Blender plugin, where everything can be managed from inside Blender.  
 Different animations / variations of them based on velocity.  
 Cutting vibrato animations instead of scaling them for more realism.  
-This was all done and tested on python2.7 (due to an admin error) but I hope to make it fully python3 compliant.  
-This is NOT PEP8 compliant... yet...
 
 ## Technology Used
 - [vishnubob/python-midi](https://github.com/vishnubob/python-midi) - Included
 - [mgedmin/python-midi](https://github.com/mgedmin/python-midi/tree/python3) Replaced above with python3 fork
 - [midicsv](http://www.fourmilab.ch/webtools/midicsv/) - Included
-- [Blender](http://www.blender.org)
-- [Python](http://www.python.org)
+- [Blender](http://www.blender.org) 2.92.0
+- [Python](http://www.python.org) 3.9.5
 
 ## Contact and such
 github@apollolms.co.za
