@@ -5,7 +5,7 @@ class midiUtility:
     FPS = 25
     BPM = 120
 
-    def __init__(self,midiResolution,BPM,FPS):
+    def __init__(self, midiResolution, BPM, FPS):
         self.midiResolution = midiResolution
         self.FPS = FPS
         self.BPM = BPM
@@ -22,7 +22,7 @@ class midiUtility:
         return frame
 
     def millisecondsToFrames(self, milliseconds):
-        fps = self.framerate # 25
+        fps = self.FPS # 25
         inSeconds = milliseconds / 1000.0 # 250 / 1000.0 = 0.25
         frames = fps * inSeconds # 25 * .025 = 6.25
 

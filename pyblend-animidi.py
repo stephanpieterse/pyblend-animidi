@@ -57,7 +57,7 @@ def main(argv):
     try:
         opts,args = getopt.getopt(argv,"hVc:")
     except getopt.GetoptError:
-        print "Use -h to get help"
+        print("Use -h to get help")
         sys.exit(2)
 
     configfile = []

@@ -153,7 +153,7 @@ class BlenderObj:
             action_object = "bpy.data.cameras[\"{}\"]".format(selObjName)
 
         else:
-            print "invalid object type assignment. please check your config file at {}".format(selObjName)
+            print("invalid object type assignment. please check your config file at {}".format(selObjName))
             exit(1)
 
         return action_object
@@ -413,10 +413,10 @@ class BlenderObj:
         output_script_name = out_config["name"]
 
         # print self.outputScript
-        print "writing current actions to a file ..."
+        print("writing current actions to a file ...")
 
         if self.outputScript != "" and self.hasAction == True:
             with open(output_script_name, 'a') as f:
                 f.write(self.outputScript)
                 f.close
-        print "done with {} ! processing next ...".format(self.blenderObject)
+        print("done with {} ! processing next ...".format(self.blenderObject))

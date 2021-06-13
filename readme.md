@@ -11,7 +11,7 @@ CSV files have been tested in the format made by midicsv.
 
 ## Licence
 <pre>
- Copyright (C) 2015 Stephan Pieterse
+ Copyright (C) 2021 Stephan Pieterse
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -106,9 +106,9 @@ piano_s:
             # constraints and modifiers, along with force fields and cloths etc. seem to all use the normal object action.
             objectType: shapekey
             # should the script create a duplicate of this object to animate? see animusic
-            shouldCreate: false
+            shouldCreate: False
             # should the script disable the object for rendering when the animation is complete
-            destroyWhenDone: true
+            destroyWhenDone: True
             # ADD, MULTIPLY, SUBTRACT, REPLACE
             defaultNLABlend: REPLACE
             # NOTHING, HOLD, HOLD_FORWARD
@@ -120,7 +120,7 @@ piano_s:
             createNewAction: True
             # specified in milliseconds. can be negative. integers only
             objectDelay = 0
-            # if this is true, the cycle_sequences section will be read and used along with the blenderObjects
+            # if this is True, the cycle_sequences section will be read and used along with the blenderObjects
             parseCycleSequences: True
 
         soundOptions:
@@ -219,16 +219,13 @@ This is NOT PEP8 compliant... yet...
 
 ## Technology Used
 - [vishnubob/python-midi](https://github.com/vishnubob/python-midi) - Included
-- [Tuxguitar](http://sourceforge.net/projects/tuxguitar/)
-- [LMMS](https://lmms.io/)
+- [mgedmin/python-midi](https://github.com/mgedmin/python-midi/tree/python3) Replaced above with python3 fork
 - [midicsv](http://www.fourmilab.ch/webtools/midicsv/) - Included
 - [Blender](http://www.blender.org)
 - [Python](http://www.python.org)
-- [Linux Mint 17.2 Cinnamon 64-bit](http://linuxmint.com/)
-- [PyCharm](http://www.jetbrains.com/pycharm/)
 
 ## Contact and such
-stephanpieterse@rubyhemisphere.dedicated.co.za
+github@apollolms.co.za
 
 ## Bug reporting
 Create an issue on GitHub.  
