@@ -2,6 +2,8 @@
 def get_relative_action_scale(obj_s, obj_e, note_s, note_e):
     action_frames = obj_e - obj_s # 10 - 5 = 5
     note_frames = note_e - note_s # 1050 - 1025 = 25
+    if action_frames <= 0:
+      action_frames = 1
     relative_scale = note_frames / float(action_frames) # 25 / 5.0 = 5
 
     return relative_scale
@@ -24,7 +26,7 @@ def buildContinueAction(curAction, newobj, noteStart, noteEnd):
                 rna_index_exists = True
 
         if rna_index_exists is False:
-            newfc = newobj.animation_data.action.fcurves.new(i.data_path,i.array_index,i.group.name)
+            newfc = newobj.animation_data.action.fcurves.new(i.data_path, index=i.array_index, action_group=i.group.name)
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):
@@ -256,7 +258,7 @@ def buildContinueActionV2(curAction, newobj, startFrame, noteStart, noteEnd, noR
                 rna_index_exists = True
 
         if rna_index_exists is False:
-            newfc = newobj.animation_data.action.fcurves.new(i.data_path, i.array_index, i.group.name)
+            newfc = newobj.animation_data.action.fcurves.new(i.data_path, index=i.array_index, action_group=i.group.name)
         else:
             for j in newobj.animation_data.action.fcurves:
                 if (j.data_path == i.data_path) and (j.array_index == i.array_index) and (j.group.name == i.group.name):

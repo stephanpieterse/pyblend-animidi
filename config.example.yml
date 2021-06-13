@@ -1,4 +1,3 @@
-# use absolute paths ... it just works better
 
 midifile:
     name: "/home/stephan/dev/pyblend-animidi/test/test2.csv"

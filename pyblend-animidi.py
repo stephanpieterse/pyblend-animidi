@@ -28,7 +28,7 @@ def main(argv):
     program_version = "1"
     help_message = """
     pyblend-animidi.py
-    Copyright (C) 2015 Stephan Pieterse
+    Copyright (C) 2021 Stephan Pieterse
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

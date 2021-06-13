@@ -27,7 +27,7 @@ CSV files have been tested in the format made by midicsv.
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 </pre>
 
-## Usage
+## Quick Usage
 - Write or get a song. 
 - Generate MIDI and or a CSV file for it. 
 - Create a blender file with basic animations that are properly labelled. 
@@ -38,10 +38,11 @@ CSV files have been tested in the format made by midicsv.
 python pyblend-animidi -c yourconfigfile.yml
 </pre>
 
-- In blender, open the script in the text editor. Alt + P to run it, or press "Run Script"
+- In Blender, run the following in the interactive console: ```bpy.utils.execfile('/home/foo/bar/testscript.py')``` with your own filepath.
+- Alternatively, open the script in the text editor. Alt + P to run it, or press "Run Script"
 
-## Rendering
-This was tested using Blender Internal as well as Cycles. I'm not sure how external renderers will react. If tested, please let me know!
+## Notes on the Blender project
+
 
 ## Terminology
 In the code, the object that is being animated is called a / the "guy". Guys don't have to exist in Blender but their settings do.
@@ -51,7 +52,6 @@ Config file is a yaml file, it should be fairly self explanatory and commented i
 Please make sure of your indentation by checking the default config as well
 
 <pre>
-# use absolute paths ... it just works better
 
 midifile:
     # name of the input file to parse.
@@ -134,7 +134,7 @@ piano_s:
 
         #this is the name of the object in blender. it should exist.
         name: Key
-        # the midi channel that this guy plays
+        # the midi channel that this guy plays. In CSV mode, this is the track
         channel: 1
         # the action to perform when nothing is happening.
         restAction: KeyAction
@@ -186,14 +186,15 @@ All note actions should have atleast 2 keyframes (time-wise), as this prevents o
 After the script ran in blender, go to the fcurve window, select all the objects, grab a single handle, move it a bit and then cancel. This recalculates the handles. I had a fix but it started deleting keyframes, and there is a fix in the newer versions of Blender apparently, but i want to keep it slightly backwards compatible.  
 Material and Shapekey and some other actions aren't that obvious to find, but they can be done from the NLA editor or the Outliner.   
 
-## Debugging
+## Troubleshooting
 There is very limited error checking currently built into the script, but some sane default values.
-If it's not working, or not as expected, check the following:
+If it's not working, or not as expected, check the following: 
 - Config file valid syntax
 - Config file correct naming and structure (Things are case sensitive!)
 - Blender objects and animations exist and have correct names
 - All Blender actions are fake usered and unlinked from objects.
 - Blender might also just exit if it ran out of memory.
+- Check the output script. If there are no START_ACTION or END_ACTION comments, there was no data parsed
 
 ## I need more channels!
 If one midi file doesn't have enough channels for you, create another instance with a new config and another midi file containing the rest of the channels.  
@@ -211,11 +212,6 @@ Different animations / variations of them based on velocity.
 Cutting vibrato animations instead of scaling them for more realism.  
 This was all done and tested on python2.7 (due to an admin error) but I hope to make it fully python3 compliant.  
 This is NOT PEP8 compliant... yet...
-
-## Test Bench
-- Acer Travelmate 5742
-- 2.67GHz Core i5 480M
-- 4GB RAM
 
 ## Technology Used
 - [vishnubob/python-midi](https://github.com/vishnubob/python-midi) - Included

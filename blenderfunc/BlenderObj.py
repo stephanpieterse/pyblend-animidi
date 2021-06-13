@@ -105,7 +105,7 @@ class BlenderObj:
 
     def pitch_as_note(self, pitch):
         notes = ['a', 'as', 'b', 'c', 'cs', 'd', 'ds', 'e', 'f', 'fs', 'g', 'gs']
-        pitch_octave = (pitch / 12) - 1
+        pitch_octave = int((pitch / 12) - 1)
         pitch_note = pitch % 12
         pitch_as_note = notes[pitch_note] + str(pitch_octave)
         return pitch_as_note
@@ -305,10 +305,11 @@ class BlenderObj:
                 standard_data = standard_data.replace("%VIBRATO_ACTION%", vibratoAction)
                 standard_data = standard_data.replace("%VIBRATO_TIME%", str(vibratoTime))
                 standard_data = standard_data.replace("%REST_ACTION%", restAction)
-                standard_data = standard_data.replace("%CALCULATED_FRAME%",str(sframe))
+                standard_data = standard_data.replace("%CALCULATED_FRAME%", str(int(sframe)))
+                standard_data = standard_data.replace("%CALCULATED_SUBFRAME%", str(sframe % 1))
                 # standard_data = standard_data.replace("%SEL_OBJECT_NAME%",selObjName)
                 if should_create is True:
-                    dupl_command = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene',selObjName + "_copy",selObjName)
+                    dupl_command = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene', selObjName + "_copy", selObjName)
                     dupl_command += "\n"
                     dupl_command += "actionObj = {}".format("bpy.data.objects[actionObj]")
                     dupl_command += "\n"
@@ -317,9 +318,9 @@ class BlenderObj:
                     dupl_command = "actionObj = {}".format(actionobj)
                     # dupl_command += "\n"
                     # dupl_command += "actionObj.animation_data_create()"
-                standard_data = standard_data.replace("%DUPLICATE_ME_SECTION%",dupl_command)
-                standard_data = standard_data.replace("%ACTION_OBJ%",actionobj)
-                standard_data = standard_data.replace("%NLA_BLENDS%",cmd_nla_blends)
+                standard_data = standard_data.replace("%DUPLICATE_ME_SECTION%", dupl_command)
+                standard_data = standard_data.replace("%ACTION_OBJ%", actionobj)
+                standard_data = standard_data.replace("%NLA_BLENDS%", cmd_nla_blends)
                 standard_data = standard_data.replace("%NOTE_START_FRAME%", str(sframe))
                 standard_data = standard_data.replace("%NOTE_END_FRAME%", str(eframe))
                 if destroy_when_done is True:
@@ -370,7 +371,8 @@ class BlenderObj:
                 script = script.replace("%VIBRATO_TIME%", str(vibratoTime))
                 script = script.replace("%REST_ACTION%", restAction)
                 script = script.replace("%NEW_ACTION%", self.currentNewAction)
-                script = script.replace("%CALCULATED_FRAME%", str(sframe))
+                script = script.replace("%CALCULATED_FRAME%", str(int(sframe)))
+                script = script.replace("%CALCULATED_SUBFRAME%", str(sframe % 1))
                 # script = script.replace("%CURRENT_OBJECT%", self.guyConf["name"])
                 if should_create is True:
                     dupl_command = "actionObj = duplicateObject({}, '{}', '{}')".format('bpy.context.scene', selObjName + "_copy", selObjName)

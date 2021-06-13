@@ -1,6 +1,6 @@
 # START INSERT
 curAction = "%PITCH_ACTION%"
-curPreNoteAction = "%PRENOTE_ACTION%" # curPreNoteAction = bpy.data.actions["%PRENOTE_ACTION%"]
+curPreNoteAction = "%PRENOTE_ACTION%"
 curAttackAction = "%ATTACK_ACTION%" # curAttackAction = bpy.data.actions["%ATTACK_ACTION%"]
 curAttackTime = %ATTACK_TIME%
 curReleaseAction = "%RELEASE_ACTION%" # curReleaseAction = bpy.data.actions["%RELEASE_ACTION%"]
@@ -24,7 +24,7 @@ if curReleaseAction != "":
 noteStart = %NOTE_START_FRAME%
 noteEnd = %NOTE_END_FRAME%
 actionStartFrame = %CALCULATED_FRAME%
-bpy.context.scene.frame_set(%CALCULATED_FRAME%)
+bpy.context.scene.frame_set(%CALCULATED_FRAME%, subframe=%CALCULATED_SUBFRAME%)
 %DUPLICATE_ME_SECTION%
 
 %NLA_BLENDS%
