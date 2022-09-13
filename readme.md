@@ -218,8 +218,6 @@ Cutting vibrato animations instead of scaling them for more realism.
 - [Blender](http://www.blender.org) 2.92.0
 - [Python](http://www.python.org) 3.9.5
 
-## Contact and such
-github@apollolms.co.za
 
 ## Bug reporting
 Create an issue on GitHub.  
